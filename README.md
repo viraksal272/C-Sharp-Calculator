@@ -5,9 +5,9 @@ A production-ready, space-optimized **Windows Forms (WinForms)** calculator buil
 ---
 
 ## 📸 Preview
-<center>
+<p align="center">
 <img width="457" height="467" alt="image" src="https://github.com/user-attachments/assets/350336a8-42aa-4da6-ac04-dee68eae0efd" />
-</center>
+</p>
 ---
 
 ## 🚀 Key Features
