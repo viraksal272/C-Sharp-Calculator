@@ -24,7 +24,7 @@ A production-ready, space-optimized **Windows Forms (WinForms)** calculator buil
 
 ## 🛠️ Tech Stack & Architecture
 
-* **Language:** C# 12 / .NET 10
+* **Language:** C# 14 / .NET 10
 * **Framework:** Windows Forms (WinForms) Native Layout Engine
 * **IDE:** Visual Studio 2022
 
