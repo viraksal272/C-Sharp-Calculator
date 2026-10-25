@@ -6,7 +6,7 @@ namespace Calculator
         private string OperationPerformed = "";
         private Boolean IsOperationPerformed = false;
 
-        private Boolean IsDarkMode = true;
+        private double Theme = 1;
         public Form1()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace Calculator
                 {
                     case "+": TempResult = FirstNum + SecondNum;
                         break;
-                    case "-": TempResult = FirstNum - SecondNum;
+                    case "−": TempResult = FirstNum - SecondNum;
                         break;
                     case "×": TempResult = FirstNum * SecondNum;
                         break;
@@ -83,7 +83,7 @@ namespace Calculator
                     case "+":
                         Result = FirstNum + SecondNum;
                         break;
-                    case "-":
+                    case "−":
                         Result = FirstNum - SecondNum;
                         break;
                     case "×":
@@ -129,10 +129,12 @@ namespace Calculator
         }
         private void ModeBtn_Clicked(object sender, EventArgs e)
         {
-            // Toggle the theme state flag
-            IsDarkMode = !IsDarkMode;
-
-            if (IsDarkMode)
+            Theme++;
+            if (Theme == 5)
+            {
+                Theme = 1;
+            }
+            if (Theme == 1)
             {
                 // --- DARK MODE COLORS ---
                 this.BackColor = Color.FromArgb(32, 34, 46);       
@@ -140,14 +142,25 @@ namespace Calculator
                 textBox1.ForeColor = Color.White;                   
 
             }
-            else
+            else if(Theme == 2)
             {
                 // --- LIGHT MODE COLORS ---
                 this.BackColor = Color.FromArgb(240, 240, 243);   
                 textBox1.BackColor = Color.FromArgb(223, 223, 223);      
                 textBox1.ForeColor = Color.Black;            
             }
-
+            else if(Theme == 3)
+            {
+                this.BackColor = Color.FromArgb(250, 165, 236);
+                textBox1.BackColor = Color.FromArgb(255, 218, 233);
+                textBox1.ForeColor = Color.FromArgb(120, 40, 75);
+            }
+            else if(Theme == 4)
+            {
+                this.BackColor = Color.FromArgb(101, 158, 247);
+                textBox1.BackColor = Color.FromArgb(163, 199, 255);
+                textBox1.ForeColor = Color.FromArgb(0, 111, 255);
+            }
             UpdateButtonThemes();
         }
         private void UpdateButtonThemes()
@@ -156,17 +169,29 @@ namespace Calculator
             {
                 if (control is Button btn)
                 {
-                    if (IsDarkMode)
+                    if (Theme == 1)
                     {
                         btn.BackColor = Color.FromArgb(54, 58, 79); 
                         btn.ForeColor = Color.White;
                         btn.FlatAppearance.BorderColor = Color.FromArgb(44, 49, 69);
                     }
-                    else
+                    else if(Theme == 2)
                     {
                         btn.BackColor = Color.FromArgb(223, 223, 223);
                         btn.ForeColor = Color.FromArgb(32, 34, 46);
                         btn.FlatAppearance.BorderColor = Color.LightGray;
+                    }
+                    else if(Theme == 3)
+                    {
+                        btn.BackColor = Color.FromArgb(255, 224, 252);
+                        btn.ForeColor = Color.FromArgb(120, 40, 75);
+                        btn.FlatAppearance.BorderColor = Color.FromArgb(242, 140, 177);
+                    }
+                    else if(Theme == 4)
+                    {
+                        btn.BackColor = Color.FromArgb(163, 199, 255);
+                        btn.ForeColor = Color.FromArgb(0, 111, 255);
+                        btn.FlatAppearance.BorderColor = Color.FromArgb(0, 111, 255);
                     }
                 }
             }
