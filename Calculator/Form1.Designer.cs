@@ -48,6 +48,7 @@
             textBox1 = new TextBox();
             button17 = new Button();
             button18 = new Button();
+            button19 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -186,9 +187,9 @@
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Segoe UI", 20F);
             button11.ForeColor = Color.White;
-            button11.Location = new Point(13, 348);
+            button11.Location = new Point(102, 348);
             button11.Name = "button11";
-            button11.Size = new Size(172, 75);
+            button11.Size = new Size(83, 75);
             button11.TabIndex = 11;
             button11.Text = "0";
             button11.UseVisualStyleBackColor = false;
@@ -296,12 +297,26 @@
             button18.Text = "Mode";
             button18.UseVisualStyleBackColor = false;
             // 
+            // button19
+            // 
+            button19.BackColor = Color.FromArgb(54, 58, 79);
+            button19.FlatStyle = FlatStyle.Flat;
+            button19.Font = new Font("Segoe UI", 20F);
+            button19.ForeColor = Color.White;
+            button19.Location = new Point(12, 348);
+            button19.Name = "button19";
+            button19.Size = new Size(83, 75);
+            button19.TabIndex = 20;
+            button19.Text = ".";
+            button19.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 31, 50);
             ClientSize = new Size(459, 435);
+            Controls.Add(button19);
             Controls.Add(button18);
             Controls.Add(button17);
             Controls.Add(textBox1);
@@ -353,5 +368,6 @@
         private TextBox textBox1;
         private Button button17;
         private Button button18;
+        private Button button19;
     }
 }
