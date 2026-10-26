@@ -30,6 +30,7 @@ namespace Calculator
             button16.Click += OperationBtn_Clicked;
             button17.Click += ClearBtn_Clicked;
             button18.Click += ModeBtn_Clicked;
+            button19.Click += DecimalBtn_Clicked;
         }
         private void NumberBtn_Clicked(Object sender, EventArgs e)
         {
@@ -39,6 +40,26 @@ namespace Calculator
                 textBox1.Text = "";
             }
             textBox1.Text += ClickedButton.Text;
+        }
+
+        private void DecimalBtn_Clicked(Object sender, EventArgs e)
+        {
+            Button ClickedButton = (Button)sender;
+            string[] parts = textBox1.Text.Split(" ");
+
+            string ActiveInput = parts[parts.Length - 1];
+
+            if (!ActiveInput.Contains("."))
+            {
+                if(string.IsNullOrEmpty(textBox1.Text) || textBox1.Text.EndsWith(" "))
+                {
+                    textBox1.Text += "0.";
+                }
+                else
+                {
+                    textBox1.Text += ".";
+                }
+            }
         }
         private void OperationBtn_Clicked(Object sender, EventArgs e)
         {
